@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+    <title>Quiz App</title>
+</head>
+
+<body>
+    <div class="container">
+        <h1 class="text-center mt-5">Quiz Time</h1>
+        <div class="d-flex justify-content-center">
+            <div class="card margin-card" style="width: 25rem;">
+                <div class="card-body">
+                    <div class="text-center">
+                        <h4 class="card-title">Question <span id="noques">1</span></h4>
+                        <p class="card-subtitle mb-2 text-muted" id="question">Lorem ipsum dolr adipisicing elit.
+                            Illum doloremque deserunt niquid?</p>
+                    </div>
+                    <ul>
+                        <li>
+                            <input type="radio" id="a" name="answer" class="answer">
+                            <label for="a" id="a_text">Answer</label>
+                        </li>
+                        <li>
+                            <input type="radio" id="b" name="answer" class="answer">
+                            <label for="b" id="b_text">Answer</label>
+                        </li>
+                        <li>
+                            <input type="radio" id="c" name="answer" class="answer">
+                            <label for="c" id="c_text">Answer</label>
+                        </li>
+                        <li>
+                            <input type="radio" id="d" name="answer" class="answer">
+                            <label for="d" id="d_text">Answer</label>
+                        </li>
+                    </ul>
+                </div>
+
+                <button type="button" id="btnSubmit" class="btn text-white" data-toggle="modal">
+                    submit!
+                </button>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="modal fade" id="gameover" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+        aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header text-center">
+                    <h5 class="modal-title w-100 font-weight-bold" id="gameover">Game Over !</h5>
+                </div>
+                <div class="modal-body text-center">
+                    <div class="w-100">
+                        <h5>Total Score:</h5>
+                        <span class="score"></span>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <div class="w-100">
+                        <button type="button" class="btn btn-try btn-block ml-1 text-white">Try Again</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous">
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous">
+    </script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous">
+    </script>
+    <script src="script.js"></script>
+</body>
+
+</html>
