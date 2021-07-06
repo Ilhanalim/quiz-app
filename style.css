@@ -12,6 +12,10 @@ body {
     font-family: 'Poppins', sans-serif;
 }
 
+.title {
+    padding-top: 4rem;
+}
+
 .margin-card {
     margin-top: 1rem;
 }
