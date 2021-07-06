@@ -34,6 +34,13 @@ const quizData = [
         c: '2',
         d: '3',
         answer: 'b'
+    }, {
+        question: 'Favourite yorushika song?',
+        a: '言って',
+        b: 'ただ君に晴れ',
+        c: 'パレード',
+        d: '風を食む',
+        answer: 'ｄ'
     }
 ]
 
