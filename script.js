@@ -40,7 +40,7 @@ const quizData = [
         b: 'ただ君に晴れ',
         c: 'パレード',
         d: '風を食む',
-        answer: 'ｄ'
+        answer: 'd'
     }
 ]
 
@@ -53,7 +53,8 @@ const c_text = document.getElementById('c_text');
 const d_text = document.getElementById('d_text');
 const btnSubmit = document.getElementById('btnSubmit');
 const btnTry = document.querySelector('.btn-try');
-const scoreEl = document.querySelector('.score');
+const gameOver = document.querySelector('.gameover');
+const ansBody = document.querySelector('.answer-body');
 const ans = document.querySelectorAll('.answer');
 // const ansArr = Array.from(ans);
 
@@ -83,12 +84,14 @@ function getAnswer() {
     // console.log(currentQuiz);
     for (let e of ans) {
         if (e.checked) {
-            console.log(e.id);
+            // console.log(e.id);
             if (e.id === currentQuiz.answer) {
-                console.log('benar');
+                // console.log('curent quiz: ' + currentQuiz.answer);
+                // console.log('benar');
                 score++;
             } else {
-                console.log("salah");
+                // console.log('curent quiz: ' + currentQuiz.answer);
+                // console.log("salah");
             }
             e.checked = false;
             isChecked = true;
@@ -119,20 +122,30 @@ function getAnswer() {
 }
 
 btnSubmit.addEventListener('click', () => {
-
+    console.log(currentQuizData);
     getAnswer();
     if (isChecked) {
         if (currentQuizData < (quizData.length - 1)) {
-            console.log(currentQuizData);
             currentQuizData++;
             noQues++;
             loadQuiz(); 
         } else {
-            btnSubmit.setAttribute('data-target', '#gameover');
-            scoreEl.innerText = `${score} / ${quizData.length}`;
-            btnTry.addEventListener('click', () => {
+            btnSubmit.innerText = 'Try Again';
+            gameOver.classList.add('font-weight-bold');
+            gameOver.innerText = 'Game Over !';
+            question.innerText = '';
+            ansBody.innerHTML = `<div class="mt-5 mr-5 pb-3 text-center">
+                                    <h5>Total Score</h5>
+                                    <h6>${score} / ${quizData.length}</h6>
+                                </div>`;
+            btnSubmit.addEventListener('click', () => {
                 location.reload();
             });
+
+            // btnSubmit.setAttribute('data-target', '#gameover');
+            // btnTry.addEventListener('click', () => {
+            //     location.reload();
+            // });
         }
     }     
     
