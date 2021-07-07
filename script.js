@@ -44,7 +44,6 @@ const quizData = [
     }
 ]
 
-
 const noQuestion = document.getElementById('noques');
 const question = document.getElementById('question');
 const a_text = document.getElementById('a_text');
@@ -56,13 +55,11 @@ const btnTry = document.querySelector('.btn-try');
 const gameOver = document.querySelector('.gameover');
 const ansBody = document.querySelector('.answer-body');
 const ans = document.querySelectorAll('.answer');
-// const ansArr = Array.from(ans);
 
 var currentQuizData = 0;
 var noQues = 1;
 var score = 0;
 var isChecked = true;
-
 
 loadQuiz();
 
@@ -78,20 +75,13 @@ function loadQuiz() {
     
 }
 
-
 function getAnswer() {
     let currentQuiz = quizData[currentQuizData];
-    // console.log(currentQuiz);
     for (let e of ans) {
         if (e.checked) {
-            // console.log(e.id);
             if (e.id === currentQuiz.answer) {
-                // console.log('curent quiz: ' + currentQuiz.answer);
-                // console.log('benar');
+                // increasing score if correct
                 score++;
-            } else {
-                // console.log('curent quiz: ' + currentQuiz.answer);
-                // console.log("salah");
             }
             e.checked = false;
             isChecked = true;
@@ -100,25 +90,6 @@ function getAnswer() {
             isChecked = false;
         }
     }
-    // Tidak bisa pakai break 
-    // ans.forEach(e => {
-    //     if (e.checked) {
-    //         console.log(e.id);
-    //         if (e.id === currentQuiz.answer) {
-    //             console.log('benar');
-    //             score++;
-    //         } else {
-    //             console.log("salah");
-    //         }
-    //         e.checked = false;
-    //         isChecked = true;
-    //         break;
-    //         console.log(isChecked);
-    //     } else {
-    //         isChecked = false;
-    //     }
-    // });
-    // console.log(isChecked);
 }
 
 btnSubmit.addEventListener('click', () => {
@@ -141,28 +112,6 @@ btnSubmit.addEventListener('click', () => {
             btnSubmit.addEventListener('click', () => {
                 location.reload();
             });
-
-            // btnSubmit.setAttribute('data-target', '#gameover');
-            // btnTry.addEventListener('click', () => {
-            //     location.reload();
-            // });
         }
-    }     
-    
+    }         
 });
-
-
-// function getAnswer() {
-//     let currentQuiz = quizData[currentQuizData];
-//     ans.forEach(e => {
-//         // console.log(e.checked);
-//         if (e.checked) {
-//             if (e.id === currentQuiz.answer) {
-//                 console.log('haha');
-//                 score++;
-//                 return true;
-//             }
-//         }
-//     });
-//     return false;
-// }
