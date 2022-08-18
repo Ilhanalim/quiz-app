@@ -1,48 +1,53 @@
 const quizData = [
-    {
-        question: 'How old am I?',
-        a: '15',
-        b: '17',
-        c: '18',
-        d: '20',
-        answer: 'c'
-    }, {
-        question: 'Favourite Anime?',
-        a: 'Death Note',
-        b: 'Sword Art Online',
-        c: 'Gintama',
-        d: 'Kimi no Nawa',
-        answer: 'a'
-    }, {
-        question: 'Favourite Band?',
-        a: 'Nirvana',
-        b: 'AC/DC',
-        c: 'Red Hot Chili Peppers',
-        d: 'Guns n Roses',
-        answer: 'c'
-    }, {
-        question: 'How to read "恋愛映画"?',
-        a: 'れんあうえいが',
-        b: 'れんあうえいか',
-        c: 'れんあいえいか',
-        d: 'れんあいえいが',
-        answer: 'd'
-    }, {
-        question: '1 + 1 x 0?',
-        a: '0',
-        b: '1',
-        c: '2',
-        d: '3',
-        answer: 'b'
-    }, {
-        question: 'Favourite yorushika song?',
-        a: '言って',
-        b: 'ただ君に晴れ',
-        c: 'パレード',
-        d: '風を食む',
-        answer: 'd'
-    }
-]
+  {
+    question: 'What does HTML stand for?',
+    a: 'Hyper Trainer Marking Language',
+    b: 'Hyper Text Marketing Language',
+    c: 'Hyper Text Markup Language',
+    d: 'Hyper Text Markup Leveler',
+    answer: 'c',
+  },
+  {
+    question: 'Which of the following includes Chromes V8 JavaScript Engine?',
+    a: 'Node JS',
+    b: 'JQuery',
+    c: 'npm',
+    d: 'Java',
+    answer: 'a',
+  },
+  {
+    question: 'Which of the following is not a programming language?',
+    a: 'Typescript',
+    b: 'Python',
+    c: 'Anaconda',
+    d: 'PHP',
+    answer: 'c',
+  },
+  {
+    question: 'Python is _____ programming language.',
+    a: 'high-level',
+    b: 'mid-level',
+    c: 'low-level',
+    d: 'none of the above',
+    answer: 'a',
+  },
+  {
+    question: '1 + 1 x 0?',
+    a: '0',
+    b: '1',
+    c: '2',
+    d: '3',
+    answer: 'b',
+  },
+  {
+    question: 'How to read "恋愛映画"?',
+    a: 'れんあうえいが',
+    b: 'れんあうえいか',
+    c: 'れんあいえいか',
+    d: 'れんあいえいが',
+    answer: 'd',
+  },
+];
 
 const noQuestion = document.getElementById('noques');
 const question = document.getElementById('question');
@@ -64,54 +69,53 @@ var isChecked = true;
 loadQuiz();
 
 function loadQuiz() {
-    let currentQuiz = quizData[currentQuizData];
-    // show data to html
-    noQuestion.innerText = noQues;
-    question.innerText = currentQuiz.question;
-    a_text.innerText = currentQuiz.a;
-    b_text.innerText = currentQuiz.b;
-    c_text.innerText = currentQuiz.c;
-    d_text.innerText = currentQuiz.d;
-    
+  let currentQuiz = quizData[currentQuizData];
+  // show data to html
+  noQuestion.innerText = noQues;
+  question.innerText = currentQuiz.question;
+  a_text.innerText = currentQuiz.a;
+  b_text.innerText = currentQuiz.b;
+  c_text.innerText = currentQuiz.c;
+  d_text.innerText = currentQuiz.d;
 }
 
 function getAnswer() {
-    let currentQuiz = quizData[currentQuizData];
-    for (let e of ans) {
-        if (e.checked) {
-            if (e.id === currentQuiz.answer) {
-                // increasing score if correct
-                score++;
-            }
-            e.checked = false;
-            isChecked = true;
-            break;
-        } else {
-            isChecked = false;
-        }
+  let currentQuiz = quizData[currentQuizData];
+  for (let e of ans) {
+    if (e.checked) {
+      if (e.id === currentQuiz.answer) {
+        // increasing score if correct
+        score++;
+      }
+      e.checked = false;
+      isChecked = true;
+      break;
+    } else {
+      isChecked = false;
     }
+  }
 }
 
 btnSubmit.addEventListener('click', () => {
-    console.log(currentQuizData);
-    getAnswer();
-    if (isChecked) {
-        if (currentQuizData < (quizData.length - 1)) {
-            currentQuizData++;
-            noQues++;
-            loadQuiz(); 
-        } else {
-            btnSubmit.innerText = 'Try Again';
-            gameOver.classList.add('font-weight-bold');
-            gameOver.innerText = 'Game Over !';
-            question.innerText = '';
-            ansBody.innerHTML = `<div class="mt-5 mr-5 pb-3 text-center">
+  console.log(currentQuizData);
+  getAnswer();
+  if (isChecked) {
+    if (currentQuizData < quizData.length - 1) {
+      currentQuizData++;
+      noQues++;
+      loadQuiz();
+    } else {
+      btnSubmit.innerText = 'Try Again';
+      gameOver.classList.add('font-weight-bold');
+      gameOver.innerText = 'Game Over !';
+      question.innerText = '';
+      ansBody.innerHTML = `<div class="mt-5 mr-5 pb-3 text-center">
                                     <h5>Total Score</h5>
                                     <h6>${score} / ${quizData.length}</h6>
                                 </div>`;
-            btnSubmit.addEventListener('click', () => {
-                location.reload();
-            });
-        }
-    }         
+      btnSubmit.addEventListener('click', () => {
+        location.reload();
+      });
+    }
+  }
 });

@@ -1,44 +1,43 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap');
 
 body {
-    /* background-image: url(../img/bg2.png); */
-    background: #ECE9E6;
-    /* fallback for old browsers */
-    background: -webkit-linear-gradient(to right, #FFFFFF, #ECE9E6);
-    /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(to right, #FFFFFF, #ECE9E6);
-    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  /* background-image: url(../img/bg2.png); */
+  background: #ece9e6;
+  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #ffffff, #ece9e6);
+  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #ffffff, #ece9e6);
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 
-    font-family: 'Poppins', sans-serif;
+  font-family: 'Poppins', sans-serif;
 }
 
 .title {
-    padding-top: 4rem;
+  padding-top: 4rem;
 }
 
 .margin-card {
-    margin-top: 1rem;
-
+  margin-top: 1rem;
 }
 
 .btn {
-    padding: .5rem;
-    background-color: rgb(108, 108, 151);
-    border-radius: 0%;
+  padding: 0.5rem;
+  background-color: rgb(108, 108, 151);
+  border-radius: 0%;
 }
 
 .btn:hover {
-    background-color: rgb(160, 160, 180);
+  background-color: rgb(160, 160, 180);
 }
 
 .btn-close {
-    background-color: rgb(183, 183, 226);
+  background-color: rgb(183, 183, 226);
 }
 
 .btn-try {
-    background-color: rgb(136, 136, 167);
+  background-color: rgb(136, 136, 167);
 }
 
 ul {
-    list-style-type: none;
+  list-style-type: none;
 }
